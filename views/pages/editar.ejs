@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda dos Pupilos do Ronnison</title>
+</head>
+<body>
+    <h1>Edite a Tarefa <%= task.tarefa_id %></h1>
+    
+    <form action="http://localhost:3000/tarefa/editar/<%= task.tarefa_id %>" method="POST">
+        <input name="titulo" value="<%= task.titulo %>" placeholder="Titulo" />
+        <input name="descricao" value="<%= task.descricao %>" placeholder="Descrição" />
+        <input name="data_finalizacao" value="<%= task.data_finalizacao %>" placeholder="Data Finalizacao" />
+        <button type="submit">enviar tarefa</button>
+    </form>
+
+    
+</body>
+</html>

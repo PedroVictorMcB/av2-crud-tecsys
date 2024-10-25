@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda dos Pupilos do Ronnison</title>
+</head>
+<body>
+    <h1>Agenda da Facul</h1>
+    <ul>
+        <% tasks.map(function(task) { %>
+            <li>
+                <h4>Titulo: <%= task.titulo %></h4>
+                <p>Descrição: <%= task.descricao %></p>
+                <p>Data de Criação: <%= task.data_criacao %></p>
+                <p>Data de Finalização: <%= task.data_finalizacao %></p>
+                <button onclick="javascript: document.location.href='http\://localhost\:3000/tarefa/delete/<%= task.tarefa_id %>'">Deletar</button>
+                <button onclick="javascript: document.location.href='http\://localhost\:3000/editar-tarefa/<%= task.tarefa_id %>'">Editar</button>
+            </li>
+        <% }); %>
+    </ul>
+
+    <form action="http://localhost:3000/tarefa" method="POST">
+        <input name="titulo" placeholder="Titulo" />
+        <input name="descricao" placeholder="Descrição" />
+        <input name="data_finalizacao" placeholder="Data Finalizacao" />
+        <button type="submit">enviar tarefa</button>
+    </form>
+
+    
+</body>
+</html>
